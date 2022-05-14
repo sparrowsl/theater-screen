@@ -1,6 +1,5 @@
 <script context="module">
-  const APIKey = "46c773b6fa9990476c24cfba87dfce3d";
-  // const trending = `https://api.themoviedb.org/3/trending/all/day?api_key=${APIKey}`
+  const APIKey = import.meta.env.VITE_APIKey;
   const popular = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`;
 
   export async function load({ fetch }) {
@@ -10,7 +9,7 @@
     if (response.ok) {
       return {
         props: {
-          popular: data,
+          popular: data.results,
         },
       };
     }
@@ -21,7 +20,7 @@
   import Movies from "$lib/components/Movies.svelte";
 
   export let popular;
-  console.log(popular.results);
+  // console.log(popular);
 </script>
 
-<Movies movies={popular.results} />
+<Movies movies={popular} />
