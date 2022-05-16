@@ -1,5 +1,5 @@
 <script context="module">
-  import { upcoming } from "$lib/utils/utils.js";
+  import { upcoming } from "$lib/stores/store.js";
 
   export async function load({ fetch }) {
     const response = await fetch(upcoming);

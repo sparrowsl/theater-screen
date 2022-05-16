@@ -1,5 +1,5 @@
 <script context="module">
-  import { APIKey } from "$lib/utils/utils.js";
+  import { APIKey } from "$lib/stores/store.js";
   const movieURL = `https://api.themoviedb.org/3/movie`;
 
   export async function load({ fetch, params }) {
@@ -69,8 +69,14 @@
     <div class="extra mt-5">
       <h4 class="mb-2 text-xl font-bold">Extra Details</h4>
 
-      <p><b class="font-meduim text-gray-700">Budget:</b> ${movie.budget}</p>
-      <p><b class="font-meduim text-gray-700">Revenue:</b> ${movie.revenue}</p>
+      <p>
+        <b class="font-meduim text-gray-700">Budget:</b>
+        ${movie.budget.toLocaleString("en-US")}
+      </p>
+      <p>
+        <b class="font-meduim text-gray-700">Revenue:</b>
+        ${movie.revenue.toLocaleString("en-US")}
+      </p>
       <p>
         <b class="font-meduim text-gray-700">Runtime:</b>
         {movie.runtime} mins

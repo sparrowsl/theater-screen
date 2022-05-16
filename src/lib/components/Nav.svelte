@@ -31,7 +31,7 @@
       placeholder="Search for a movie"
       class="bg-inherit px-4 py-2 shadow-sm"
     />
-    <button type="submit" class=" pr-2">
+    <button type="submit" class="pr-2">
       <img src="/search-line.svg" alt="search button" />
     </button>
   </form>

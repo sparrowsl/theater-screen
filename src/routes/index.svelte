@@ -1,5 +1,5 @@
 <script context="module">
-  import { popular } from "$lib/utils/utils.js";
+  import { popular } from "$lib/stores/store.js";
 
   export async function load({ fetch }) {
     const response = await fetch(popular);
