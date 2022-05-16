@@ -1,5 +1,5 @@
 <script context="module">
-  const APIKey = "46c773b6fa9990476c24cfba87dfce3d";
+  import { APIKey } from "$lib/utils/utils.js";
   const movieURL = `https://api.themoviedb.org/3/movie`;
 
   export async function load({ fetch, params }) {
@@ -26,11 +26,11 @@
   <title>{movie.title} - Theater Screen</title>
 </svelte:head>
 
-<article class="min-h-[70vh] py-2 px-4 md:px-6 flex flex-col content-cente">
+<article class="content-cente flex min-h-[70vh] flex-col py-2 px-4 md:px-6">
   <!-- Go back home -->
   <a
     href="/"
-    class="shadow-md hover:shadow hover:text-blue-500 bg-slate-200 max-w-fit py-1 px-3 my-3 rounded text-blue-800"
+    class="my-3 max-w-fit rounded bg-slate-200 py-1 px-3 text-blue-800 shadow-md hover:text-blue-500 hover:shadow"
   >
     ← back
   </a>
@@ -41,22 +41,24 @@
       alt={movie.title}
       class="object-cover"
     />
-    <small class="block md:text-sm text-center italic text-gray-700">{movie.tagline}</small>
+    <small class="block text-center italic text-gray-700 md:text-sm"
+      >{movie.tagline}</small
+    >
   </div>
   <!-- Title of movie -->
-  <h1 class="text-center text-xl md:text-2xl font-bold">{movie.title}</h1>
+  <h1 class="text-center text-xl font-bold md:text-2xl">{movie.title}</h1>
   <!-- Line break -->
   <hr class="my-2" />
 
   <section class="desc mt-4">
     <!-- Summary -->
     <div>
-      <h4 class="font-bold text-xl mb-1">Plot</h4>
+      <h4 class="mb-1 text-xl font-bold">Plot</h4>
       <p>{movie.overview}</p>
       <!-- Movie genres (label) -->
-      <ul class="flex flex-wrap gap-3 mt-4">
+      <ul class="mt-4 flex flex-wrap gap-3">
         {#each movie.genres as genre}
-          <li class="bg-slate-200 px-2 py-1 rounded text-green-700 shadow-md">
+          <li class="rounded bg-slate-200 px-2 py-1 text-green-700 shadow-md">
             {genre.name}
           </li>
         {/each}
@@ -65,30 +67,30 @@
 
     <!-- Extra -->
     <div class="extra mt-5">
-      <h4 class="font-bold text-xl mb-2">Extra Details</h4>
+      <h4 class="mb-2 text-xl font-bold">Extra Details</h4>
 
-      <p><b class="text-gray-700 font-meduim">Budget:</b> ${movie.budget}</p>
-      <p><b class="text-gray-700 font-meduim">Revenue:</b> ${movie.revenue}</p>
+      <p><b class="font-meduim text-gray-700">Budget:</b> ${movie.budget}</p>
+      <p><b class="font-meduim text-gray-700">Revenue:</b> ${movie.revenue}</p>
       <p>
-        <b class="text-gray-700 font-meduim">Runtime:</b>
+        <b class="font-meduim text-gray-700">Runtime:</b>
         {movie.runtime} mins
       </p>
       <p>
-        <b class="text-gray-700 font-meduim">Rating:</b>
+        <b class="font-meduim text-gray-700">Rating:</b>
         {movie.vote_average}✨
       </p>
       <p>
-        <b class="text-gray-700 font-meduim">Released On:</b>
+        <b class="font-meduim text-gray-700">Released On:</b>
         {movie.release_date}
       </p>
-      <p><b class="text-gray-700 font-meduim">Produced By:</b></p>
+      <p><b class="font-meduim text-gray-700">Produced By:</b></p>
       <ul>
         {#each movie.production_companies as company}
           <li class="indent-10">- {company.name}</li>
         {/each}
       </ul>
       <!-- </p> -->
-      <p><b class="text-gray-700 font-meduim">Languages:</b></p>
+      <p><b class="font-meduim text-gray-700">Languages:</b></p>
       <ul class="">
         {#each movie.spoken_languages as language}
           <li class="indent-10">- {language.english_name}</li>

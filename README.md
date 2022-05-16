@@ -1,38 +1,42 @@
-# create-svelte
+# Theater Screen
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A small website to display movies and some info about each movie. A search functionality is also available.
 
-## Creating a project
+- Live Site URL: [live site](https://theaterscreen.netlify.app/)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Table of contents
 
-```bash
-# create a new project in the current directory
-npm init svelte
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
 
-# create a new project in my-app
-npm init svelte my-app
-```
+## Overview
 
-## Developing
+### The challenge
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Users should be able to:
 
-```bash
-npm run dev
+- See most popular movies at the start
+- Search for a movie using an `input` field
+- Filter movies by category
+- Click on a movie title to see more detailed information on a separate page
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Screenshot
 
-## Building
+![](./theater-screen.png)
 
-To create a production version of your app:
+## My process
 
-```bash
-npm run build
-```
+### Built with
 
-You can preview the production build with `npm run preview`.
+- Semantic HTML5 markup
+- [TailwindCSS](https://tailwindcss.com) - CSS Framework
+- [Sveltekit](https://kit.svelte.dev/) - JS Framework
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Useful resources
+
+- [TailwindCSS](https://tailwindcss.com) - This helped me for designing and styling the website as easy as possible.

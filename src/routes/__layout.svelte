@@ -3,16 +3,18 @@
   import Nav from "$lib/components/Nav.svelte";
 </script>
 
-<header class="container min-h-16 py-3 grid content-center mx-auto xl:max-w-5xl bg-slate-200 shadow">
+<header
+  class="min-h-16 xl:max-w-5x grid content-center bg-slate-200 py-3 shadow-sm"
+>
   <Nav />
 </header>
 
-<main class="container mx-auto xl:max-w-5xl">
+<main class="mx-auto xl:max-w-5xl">
   <slot />
 </main>
 
-<footer class="container mx-auto xl:max-w-5xl py-5">
-  <p class="text-slate-400 text-center italic">
+<footer class="container mx-auto py-5 xl:max-w-5xl">
+  <p class="text-center italic text-slate-400">
     Made using the
     <a
       href="https://developers.themoviedb.org/3/getting-started/introduction"

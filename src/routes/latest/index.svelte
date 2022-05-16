@@ -1,14 +1,14 @@
 <script context="module">
-  import { popular } from "$lib/utils/utils.js";
+  import { upcoming } from "$lib/utils/utils.js";
 
   export async function load({ fetch }) {
-    const response = await fetch(popular);
+    const response = await fetch(upcoming);
     const data = await response.json();
 
     if (response.ok) {
       return {
         props: {
-          popularMovies: data.results,
+          upcomingMovies: data.results,
         },
       };
     }
@@ -18,7 +18,7 @@
 <script>
   import Movies from "$lib/components/Movies.svelte";
 
-  export let popularMovies;
+  export let upcomingMovies;
 </script>
 
-<Movies movies={popularMovies} />
+<Movies movies={upcomingMovies} />
