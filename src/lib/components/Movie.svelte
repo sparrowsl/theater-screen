@@ -2,7 +2,7 @@
   export let movie;
 </script>
 
-<figure class="movie-card">
+<figure>
   <img
     src="https://image.tmdb.org/t/p/w500{movie.poster_path}"
     alt={movie.title}
@@ -15,6 +15,3 @@
     <p class="text-xs italic">{movie.release_date || movie.first_air_date}</p>
   </figcaption>
 </figure>
-
-<style>
-</style>

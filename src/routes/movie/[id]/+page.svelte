@@ -1,36 +1,17 @@
-<script context="module">
-  import { APIKey } from "$lib/stores/store.js";
-  const movieURL = `https://api.themoviedb.org/3/movie`;
-
-  export async function load({ fetch, params }) {
-    const response = await fetch(
-      `${movieURL}/${params.movie}?api_key=${APIKey}&language=en-US`
-    );
-    const data = await response.json();
-
-    if (response.ok) {
-      return {
-        props: {
-          movie: data,
-        },
-      };
-    }
-  }
-</script>
-
 <script>
-  export let movie;
+  export let data;
+  const { movie } = data;
 </script>
 
 <svelte:head>
   <title>{movie.title} - Theater Screen</title>
 </svelte:head>
 
-<article class="content-cente flex min-h-[70vh] flex-col py-2 px-4 md:px-6">
+<article class="flex min-h-screen flex-col py-2 px-4 md:px-6">
   <!-- Go back home -->
   <a
     href="/"
-    class="my-3 max-w-fit rounded bg-slate-200 py-1 px-3 text-blue-800 shadow-md hover:text-blue-500 hover:shadow"
+    class="my-3 w-fit block py-1 px-3 text-blue-800 hover:text-blue-500"
   >
     ← back
   </a>
@@ -41,9 +22,9 @@
       alt={movie.title}
       class="object-cover"
     />
-    <small class="block text-center italic text-gray-700 md:text-sm"
-      >{movie.tagline}</small
-    >
+    <small class="block text-center italic text-gray-700 md:text-sm">
+      {movie.tagline}
+    </small>
   </div>
   <!-- Title of movie -->
   <h1 class="text-center text-xl font-bold md:text-2xl">{movie.title}</h1>
@@ -66,7 +47,7 @@
     </div>
 
     <!-- Extra -->
-    <div class="extra mt-5">
+    <div class="mt-5">
       <h4 class="mb-2 text-xl font-bold">Extra Details</h4>
 
       <p>
