@@ -1,8 +1,10 @@
 <script>
+  import { fly } from "svelte/transition";
+
   export let movie;
 </script>
 
-<figure>
+<figure in:fly={{ y: 200 }}>
   <img
     src="https://image.tmdb.org/t/p/w500{movie.poster_path}"
     alt={movie.title}

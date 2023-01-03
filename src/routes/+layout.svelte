@@ -4,7 +4,7 @@
 </script>
 
 <header
-  class="min-h-16 xl:max-w-5x grid content-center bg-slate-200 py-3 shadow-sm"
+  class="min-h-16 xl:max-w-5xl grid content-center bg-slate-200 py-3 shadow-sm"
 >
   <Nav />
 </header>
