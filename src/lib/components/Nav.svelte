@@ -4,7 +4,7 @@
 </script>
 
 <nav
-  class="container mx-auto flex flex-col items-center justify-between gap-2 px-1 sm:px-5 md:flex-row"
+  class="mx-auto max-w-5xl flex flex-col items-center container justify-between gap-2 px-1 sm:px-5 md:flex-row"
 >
   <!-- Logo -->
   <a href="/" class="logo min-w-fit text-lg font-bold">Theater Screen</a>

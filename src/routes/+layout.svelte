@@ -3,9 +3,7 @@
   import Nav from "$lib/components/Nav.svelte";
 </script>
 
-<header
-  class="min-h-16 xl:max-w-5xl grid content-center bg-slate-200 py-3 shadow-sm"
->
+<header class="min-h-16 grid content-center bg-slate-200 py-3 shadow-sm">
   <Nav />
 </header>
 
